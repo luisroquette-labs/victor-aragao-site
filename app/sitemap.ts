@@ -3,7 +3,6 @@ import { posts } from "./posts";
 
 export const dynamic = "force-static";
 
-// Troque pelo domínio real quando o Victor tiver um.
 const BASE = process.env.NEXT_PUBLIC_SITE_URL || "https://luisroquette-labs.github.io/victor-aragao-site";
 
 export default function sitemap(): MetadataRoute.Sitemap {

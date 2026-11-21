@@ -1,5 +1,3 @@
-// Capa abstrata "campo de colônias" — determinística a partir do slug
-// (mesmo resultado no servidor e no cliente, sem mismatch de hidratação).
 
 function hash(str: string) {
   let h = 2166136261;
@@ -27,7 +25,6 @@ export default function PostCover({ seed, className }: { seed: string; className
     r: rnd() * 5 + 1.5,
     stain: rnd() < 0.16,
   }));
-  // algumas ligações entre colônias próximas
   const links: { x1: number; y1: number; x2: number; y2: number }[] = [];
   for (let i = 0; i < dots.length; i++) {
     for (let j = i + 1; j < dots.length; j++) {

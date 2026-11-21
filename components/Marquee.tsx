@@ -1,4 +1,3 @@
-// Faixa infinita de termos da pesquisa — matriz de palavras-chave em loop.
 export default function Marquee({ items }: { items: string[] }) {
   const row = [...items, ...items];
   return (

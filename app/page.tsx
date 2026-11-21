@@ -30,7 +30,6 @@ export default function Page() {
     <main>
       <SiteHeader />
 
-      {/* ---------------- HERO ---------------- */}
       <header className="hero" id="top">
         <Biofilm />
         <div className="wrap hero-grid">
@@ -65,7 +64,6 @@ export default function Page() {
         </div>
       </header>
 
-      {/* ---------------- STATS ---------------- */}
       <section className="section stats-band">
         <div className="wrap">
           <Reveal className="stats-grid">
@@ -80,10 +78,8 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- MARQUEE ---------------- */}
       <Marquee items={marquee} />
 
-      {/* ---------------- SOBRE ---------------- */}
       <section className="section about" id="sobre">
         <div className="wrap">
           <Reveal className="about-grid">
@@ -101,7 +97,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- SERVIÇOS ---------------- */}
       <section className="section offerings" id="servicos">
         <div className="wrap">
           <Reveal>
@@ -125,7 +120,6 @@ export default function Page() {
 
       <StreakDivider />
 
-      {/* ---------------- LINHA DE PESQUISA (BENTO) ---------------- */}
       <section className="section" id="pesquisa">
         <div className="wrap">
           <Reveal className="research-head">
@@ -145,7 +139,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- TRAJETÓRIA ---------------- */}
       <section className="section trajectory">
         <div className="wrap">
           <Reveal>
@@ -156,7 +149,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- PUBLICAÇÕES ---------------- */}
       <section className="section publications">
         <div className="wrap">
           <Reveal className="research-head">
@@ -181,7 +173,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- FAQ ---------------- */}
       <section className="section faq-section">
         <div className="wrap">
           <Reveal className="faq-grid">
@@ -198,7 +189,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- BLOG ---------------- */}
       <section className="section blog-teaser" id="blog">
         <div className="wrap">
           <Reveal className="blog-teaser-head">
@@ -218,7 +208,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- TATAME ---------------- */}
       <section className="section tatame" id="tatame">
         <div className="wrap">
           <Reveal>
@@ -229,7 +218,6 @@ export default function Page() {
         </div>
       </section>
 
-      {/* ---------------- CONTATO ---------------- */}
       <section className="section contact" id="contato">
         <div className="wrap">
           <Reveal>

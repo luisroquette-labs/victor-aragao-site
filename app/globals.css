@@ -12,7 +12,6 @@
   --maxw: 1080px;
   --pad: clamp(1.25rem, 5vw, 4rem);
 
-  /* fontes injetadas por next/font (ver layout.tsx) com fallback */
   --font-display: var(--font-newsreader), Georgia, "Times New Roman", serif;
   --font-body: var(--font-plex-sans), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
@@ -37,7 +36,6 @@ a { color: inherit; }
 
 ::selection { background: color-mix(in srgb, var(--stain) 30%, transparent); }
 
-/* ---------- utilidades de layout ---------- */
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
 
 .section { padding-block: clamp(4.5rem, 10vw, 8rem); }
@@ -68,7 +66,6 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; letter-spacing:
 
 p { margin: 0 0 1.1rem; }
 
-/* ---------- marca de coloração (signature) ---------- */
 .stain {
   position: relative;
   white-space: nowrap;
@@ -84,7 +81,6 @@ p { margin: 0 0 1.1rem; }
 }
 .stain--teal::before { background: color-mix(in srgb, var(--teal) 20%, transparent); }
 
-/* ---------- HEADER / MARCA ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -126,13 +122,11 @@ p { margin: 0 0 1.1rem; }
 .brand-cta:hover { border-color: var(--teal); color: var(--teal-deep); }
 .foot-brand { display: inline-flex; align-items: center; gap: 0.6rem; }
 
-/* ---------- HERO ---------- */
 .hero {
   position: relative;
   padding-block: clamp(5rem, 13vw, 9rem) clamp(4rem, 9vw, 7rem);
   overflow: hidden;
 }
-/* textura de colônias em ágar */
 .hero::before {
   content: "";
   position: absolute;
@@ -147,7 +141,6 @@ p { margin: 0 0 1.1rem; }
   z-index: 0;
   opacity: 0.35;
 }
-/* rede viva de colônias (canvas) — assinatura do hero */
 .biofilm-canvas {
   position: absolute;
   inset: 0;
@@ -197,7 +190,6 @@ p { margin: 0 0 1.1rem; }
   margin: 0 0.95ch;
 }
 
-/* placa / petri com retrato */
 .plate {
   position: relative;
   width: min(300px, 74vw);
@@ -215,7 +207,7 @@ p { margin: 0 0 1.1rem; }
   place-items: center;
   overflow: hidden;
 }
-.plate::after { /* colônias dentro da placa */
+.plate::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -247,7 +239,6 @@ p { margin: 0 0 1.1rem; }
   color: var(--muted);
 }
 
-/* ---------- botões ---------- */
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 .btn {
   display: inline-flex;
@@ -267,7 +258,6 @@ p { margin: 0 0 1.1rem; }
 .btn-ghost { border: 1px solid var(--line); color: var(--ink); background: transparent; }
 .btn-ghost:hover { border-color: var(--teal); color: var(--teal-deep); transform: translateY(-2px); }
 
-/* ---------- SOBRE ---------- */
 .about { background: var(--card); border-block: 1px solid var(--line); }
 .about-grid { display: grid; gap: clamp(1.5rem, 4vw, 3rem); }
 @media (min-width: 820px) { .about-grid { grid-template-columns: 0.9fr 1.1fr; } }
@@ -275,7 +265,6 @@ p { margin: 0 0 1.1rem; }
 .about .lead { font-size: 1.22rem; line-height: 1.5; color: var(--ink); }
 .about .body { color: var(--ink-2); }
 
-/* ---------- SERVIÇOS ---------- */
 .offerings .offer-heading { font-size: clamp(1.9rem, 4vw, 2.9rem); max-width: 16ch; margin-bottom: 3rem; }
 .offer-grid { display: grid; gap: 1.1rem; grid-template-columns: 1fr; }
 @media (min-width: 760px) { .offer-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -319,7 +308,6 @@ p { margin: 0 0 1.1rem; }
 }
 .offer-cta:hover { gap: 1.1ch; }
 
-/* ---------- PESQUISA ---------- */
 .research-head { display: grid; gap: 1rem; margin-bottom: 3rem; }
 .research-head h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); max-width: 18ch; }
 .research-head .summary { color: var(--ink-2); max-width: 56ch; }
@@ -357,7 +345,6 @@ p { margin: 0 0 1.1rem; }
   .pub .arrow { grid-column: 2; }
 }
 
-/* ---------- TATAME (banda invertida) ---------- */
 .tatame { background: var(--ink); color: var(--paper); position: relative; overflow: hidden; }
 .tatame::before {
   content: "";
@@ -371,7 +358,6 @@ p { margin: 0 0 1.1rem; }
 .tatame .line { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.7rem); max-width: 20ch; margin-bottom: 1.4rem; position: relative; }
 .tatame .body { color: color-mix(in srgb, var(--paper) 72%, transparent); max-width: 50ch; position: relative; }
 
-/* ---------- CONTATO ---------- */
 .contact h2 { font-size: clamp(2rem, 5vw, 3.4rem); max-width: 16ch; margin-bottom: 1.3rem; }
 .contact .line { color: var(--ink-2); font-size: 1.15rem; margin-bottom: 2.2rem; max-width: 42ch; }
 .contact-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; }
@@ -389,7 +375,6 @@ p { margin: 0 0 1.1rem; }
 }
 .contact-links a:hover { border-color: var(--teal); color: var(--teal-deep); transform: translateY(-2px); }
 
-/* ---------- FOOTER ---------- */
 .foot { border-top: 1px solid var(--line); background: var(--card); }
 .foot-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; padding-block: 3.5rem 2rem; }
 @media (min-width: 720px) { .foot-grid { grid-template-columns: 1.6fr 1fr 1fr; gap: 2.5rem; } }
@@ -402,7 +387,6 @@ p { margin: 0 0 1.1rem; }
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem; padding-block: 1.5rem; border-top: 1px solid var(--line); }
 .foot-base span { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
-/* ---------- reveal on scroll ---------- */
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 
@@ -415,15 +399,12 @@ p { margin: 0 0 1.1rem; }
 
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; border-radius: 2px; }
 
-/* ====================== ELEMENTOS DENSOS ====================== */
 
-/* nav */
 .nav-links { display: flex; align-items: center; gap: 1.5rem; }
 .nav-links a { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.18s ease; }
 .nav-links a:hover { color: var(--teal-deep); }
 @media (max-width: 560px) { .nav-links a:not(.brand-cta) { display: none; } }
 
-/* stats */
 .stats-band { background: var(--card); border-block: 1px solid var(--line); padding-block: clamp(3rem, 7vw, 5rem); }
 .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.2rem 1rem; }
 @media (min-width: 760px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
@@ -432,7 +413,6 @@ p { margin: 0 0 1.1rem; }
 .stat-n--text { font-size: clamp(1.5rem, 3.2vw, 2rem); }
 .stat-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); max-width: 22ch; }
 
-/* marquee */
 .marquee { overflow: hidden; border-bottom: 1px solid var(--line); padding-block: 1.1rem; background: var(--paper); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
 .marquee-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -440,7 +420,6 @@ p { margin: 0 0 1.1rem; }
 .marquee-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); margin-inline: 1.5rem; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* bento */
 .bento { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2.8rem; }
 @media (min-width: 760px) { .bento { grid-template-columns: repeat(2, 1fr); } }
 .bento-cell { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 4px; padding: 2rem 1.8rem; background: var(--card); display: flex; flex-direction: column; gap: 0.7rem; transition: border-color 0.2s ease, transform 0.2s ease; }
@@ -451,7 +430,6 @@ p { margin: 0 0 1.1rem; }
 .bento-cell h3 { font-family: var(--font-display); font-size: 1.4rem; }
 .bento-cell p { color: var(--ink-2); margin: 0; font-size: 0.98rem; position: relative; }
 
-/* timeline */
 .timeline { list-style: none; margin: 2.6rem 0 0; padding: 0; position: relative; }
 .timeline::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 1px; background: var(--line); }
 .tl-item { position: relative; padding: 0 0 2.2rem 2.6rem; }
@@ -461,7 +439,6 @@ p { margin: 0 0 1.1rem; }
 .tl-title { font-family: var(--font-display); font-size: 1.3rem; margin: 0.2rem 0 0.3rem; }
 .tl-text { color: var(--ink-2); margin: 0; max-width: 52ch; }
 
-/* faq */
 .faq-grid { display: grid; gap: 2rem; }
 @media (min-width: 820px) { .faq-grid { grid-template-columns: 0.8fr 1.2fr; gap: 3rem; } }
 .faq-head h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
@@ -478,7 +455,6 @@ p { margin: 0 0 1.1rem; }
 .acc-item.is-open .acc-a { max-height: 320px; }
 .acc-a p { color: var(--ink-2); padding-bottom: 1.3rem; margin: 0; max-width: 62ch; }
 
-/* blog teaser + cards */
 .blog-teaser-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 1rem; margin-bottom: 2.6rem; }
 .blog-teaser-head h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); }
 .blog-grid { display: grid; grid-template-columns: 1fr; gap: 1.4rem; }
@@ -494,13 +470,11 @@ p { margin: 0 0 1.1rem; }
 .blog-card-body p { color: var(--ink-2); font-size: 0.95rem; margin: 0; flex: 1; }
 .blog-card-link { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-deep); margin-top: 0.3rem; }
 
-/* ====================== PÁGINAS INTERNAS ====================== */
 .page-head { padding-block: clamp(5.5rem, 10vw, 8rem) clamp(2.5rem, 5vw, 4rem); border-bottom: 1px solid var(--line); }
 .page-head .eyebrow { margin-bottom: 1.1rem; }
 .page-head h1 { font-size: clamp(2.6rem, 7vw, 5rem); max-width: 16ch; }
 .page-head .page-dek { color: var(--ink-2); font-size: 1.2rem; max-width: 56ch; margin-top: 1.3rem; }
 
-/* artigo */
 .article { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem); }
 .article-wrap { max-width: 720px; margin: 0 auto; padding-inline: var(--pad); }
 .article-meta { display: flex; flex-wrap: wrap; gap: 0.8rem 1.4rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.6rem; }
@@ -516,7 +490,6 @@ p { margin: 0 0 1.1rem; }
 .back-link { display: inline-block; margin-top: 3rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); text-decoration: none; }
 .back-link:hover { color: var(--teal-deep); }
 
-/* grid de artigos (índice do blog) */
 .blog-index { padding-block: clamp(2.5rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem); }
 .blog-index .blog-grid { gap: 1.6rem; }
 @media (min-width: 900px) { .blog-index .blog-grid { grid-template-columns: repeat(2, 1fr); } }
