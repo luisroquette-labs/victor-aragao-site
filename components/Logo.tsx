@@ -1,5 +1,3 @@
-/** Logomarca VA — ligadura V+A (V apex embaixo, A apex em cima, traço do meio
- *  compartilhado), dentro de uma placa; ponto crimson = colônia. */
 export default function Logo({ size = 34 }: { size?: number }) {
   return (
     <svg

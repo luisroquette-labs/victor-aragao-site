@@ -1,13 +1,8 @@
-// Conteúdo do site do Victor Aragão.
-// Fatos (credenciais, publicações) vêm do profile.json / pesquisa pública.
-// A oferta de serviços é inferida do perfil — é um ponto de partida forte,
-// editável aqui mesmo. A pessoa só mandou o LinkedIn; o resto é nosso melhor julgamento.
 
 export const person = {
   name: "Victor Aragão",
   legalName: "Victor Aragão Abreu de Freitas",
   eyebrow: "Microbiologia e imunologia oral · FOP/UNICAMP",
-  // Posicionamento de venda: o diferencial é ser dentista COM doutorado em microbiologia.
   thesis:
     "Cirurgião-dentista com doutorado em microbiologia. Uno ciência de verdade e prática — no consultório, no palco e na bancada.",
   roleLine: "PhD em Microbiologia e Imunologia · FOP/UNICAMP · Faixa preta de Jiu-Jitsu",

@@ -1,4 +1,3 @@
-/** Divisor-assinatura: estria de placa (streak plate). */
 export default function StreakDivider() {
   return (
     <div className="wrap" aria-hidden="true">

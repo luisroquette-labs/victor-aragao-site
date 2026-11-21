@@ -21,8 +21,8 @@ export default function Biofilm() {
     if (!canvas || !parent || !ctx) return;
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const TEAL = "18,104,94"; // #12685E — colônia viável
-    const STAIN = "192,66,106"; // #C0426A — colônia "corada" (Gram stain)
+    const TEAL = "18,104,94";
+    const STAIN = "192,66,106";
     const LINK = 150;
 
     type Node = { x: number; y: number; vx: number; vy: number; r: number; stain: boolean };
@@ -59,7 +59,6 @@ export default function Biofilm() {
 
     function draw(animate: boolean) {
       ctx!.clearRect(0, 0, w, h);
-      // matriz do biofilme
       ctx!.lineWidth = 1;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
