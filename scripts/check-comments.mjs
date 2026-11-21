@@ -16,8 +16,10 @@ function sourceComments(file, source) {
   const jsxText = [];
   function visit(node) {
     if (ts.isJsxText(node)) jsxText.push([node.pos, node.end]);
-    for (const finder of [ts.getLeadingCommentRanges, ts.getTrailingCommentRanges]) {
-      for (const range of finder(source, node.pos) || []) ranges.set(range.pos, range);
+    for (const position of [node.pos, node.end]) {
+      for (const finder of [ts.getLeadingCommentRanges, ts.getTrailingCommentRanges]) {
+        for (const range of finder(source, position) || []) ranges.set(range.pos, range);
+      }
     }
     if (ts.isJsxExpression(node)) {
       for (const range of ts.getTrailingCommentRanges(source, node.getStart(tree) + 1) || []) ranges.set(range.pos, range);
@@ -77,6 +79,7 @@ function inspect(file, source) {
 
 if (process.argv.includes('--self-test')) {
   assert.deepEqual(inspect('x.ts', 'const r = /[//]/; const x = `${1 /* why */}`;'), [1]);
+  assert.deepEqual(inspect('x.ts', 'const a={x:1 /* why */};'), [1]);
   assert.deepEqual(inspect('x.tsx', 'const C=()=> <div> // text {/* why */}</div>;'), [1]);
   assert.deepEqual(inspect('x.css', 'a{content:"/* literal */"} /* why */'), [1]);
   assert.deepEqual(inspect('x.yml', 'run: |\n  echo "# literal"\nname: CI # why'), [3]);
